@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <bits/stdc++.h>
+ 
+#define ll long long
+#define int long long int
+#define fast_io()                \
+    ios::sync_with_stdio(false); \
+    cin.tie(nullptr);            \
+    cout.tie(nullptr);
+#define vi vector<ll>
+#define take(a, n)              \
+    for (int j = 0; j < n; j++) \
+        cin >> a[j];
+#define give(a, n)              \
+    for (int j = 0; j < n; j++) \
+        cout << a[j] << ' ';    \
+    cout << endl;
+#define be(x) x.begin(), x.end()
+#define yes cout << "YES" << endl;
+#define no cout << "NO" << endl;
+ 
+const ll INF = 1e9 + 5;
+using namespace std;
+ 
+ 
+void ihatecp() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+ 
+ 
+void solve() {
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int q=0,maxi=0,ans=0;
+    for(int i=0;i<n;i++){
+        maxi=max(maxi,a[i]);
+        int diff=maxi-a[i];
+        ans+=diff;
+        q=max(q,diff);
+    }
+    cout<<ans+q<<'\n';
+}
+ 
+signed main() {
+    fast_io();
+    //ihatecp();
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
