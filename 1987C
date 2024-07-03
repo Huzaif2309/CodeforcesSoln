@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+ 
+#define ll long long
+#define int long long int
+#define fast_io()                \
+    ios::sync_with_stdio(false); \
+    cin.tie(nullptr);            \
+    cout.tie(nullptr);
+#define vi vector<ll>
+#define take(a, n)              \
+    for (int j = 0; j < n; j++) \
+        cin >> a[j];
+#define give(a, n)              \
+    for (int j = 0; j < n; j++) \
+        cout << a[j] << ' ';    \
+    cout << endl;
+#define be(x) x.begin(), x.end()
+#define yes cout << "YES" << endl;
+#define no cout << "NO" << endl;
+ 
+const ll INF = 1e9 + 5;
+using namespace std;
+ 
+void ihatecp() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+ 
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int res=a[n-1];
+    for(int i=n-2;i>=0;i--){
+        res=max(res+1,a[i]);
+    }
+    cout<<res<<'\n';
+}
+ 
+signed main() {
+    fast_io();
+    #ifndef ONLINE_JUDGE
+    ihatecp();
+    #endif
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
